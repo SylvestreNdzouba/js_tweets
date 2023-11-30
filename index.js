@@ -84,4 +84,10 @@ for (let i = 0; i < tweets.length; i++) {
   baliseP3.classList.add("author");
   baliseP3.textContent = tweets[i].author;
   baliseLi.appendChild(baliseP3);
+
+  //Je crée une condition qui dit que si le nombre de likes est supérieur à 10
+  //Alors on ajoute la classe favorite à la balise li
+  if (tweets[i].likes > 10) {
+    baliseLi.classList.add("favorite");
+  }
 }
