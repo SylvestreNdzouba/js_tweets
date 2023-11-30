@@ -32,32 +32,26 @@ const tweets = [
   },
 ];
 
-//Je récupère la balise ul grâce à son id
-const baliseUl = document.getElementById("tweets-list");
+//Je crée une boucle qui va parcourir tous les tweets grâce à la longueur du tableau tweets en utilisants tweets.length
+//Et je mets tout simplement à l'intérieur de la boucle le code précédent en remplaçant l'index 0 par i
 
-//Je crée une balise li
-const baliseLi = document.createElement("li");
-//Je lui ajoute la classe tweet
-baliseLi.classList.add("tweet");
-//Et je l'affiche dans la balise ul
-baliseUl.appendChild(baliseLi);
+for (let i = 0; i < tweets.length; i++) {
+  const baliseLi = document.createElement("li");
+  baliseLi.classList.add("tweet");
+  baliseUl.appendChild(baliseLi);
 
-//Je crée une balise p
-const baliseP = document.createElement("p");
-//Je lui ajoute la classe content
-baliseP.classList.add("content");
-//Il prend comme texte le contenu du premier tweet grâce à sa clé content et l'index 0
-baliseP.textContent = tweets[0].content;
-//Et je l'affiche dans la balise li
-baliseLi.appendChild(baliseP);
+  const baliseP = document.createElement("p");
+  baliseP.classList.add("content");
+  baliseP.textContent = tweets[i].content;
+  baliseLi.appendChild(baliseP);
 
-//Je fais la même chose pour les 2 balises p suivantes
-const baliseP2 = document.createElement("p");
-baliseP2.classList.add("likes");
-baliseP2.textContent = tweets[0].likes;
-baliseLi.appendChild(baliseP2);
+  const baliseP2 = document.createElement("p");
+  baliseP2.classList.add("likes");
+  baliseP2.textContent = tweets[i].likes;
+  baliseLi.appendChild(baliseP2);
 
-const baliseP3 = document.createElement("p");
-baliseP3.classList.add("author");
-baliseP3.textContent = tweets[0].author;
-baliseLi.appendChild(baliseP3);
+  const baliseP3 = document.createElement("p");
+  baliseP3.classList.add("author");
+  baliseP3.textContent = tweets[i].author;
+  baliseLi.appendChild(baliseP3);
+}
